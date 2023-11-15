@@ -152,9 +152,8 @@ impl ChromaCollection {
 
         let path = format!("/collections/{}/upsert", self.id);
         let response = self.api.post(&path, Some(json_body))?;
-        let response = response.json::<bool>()?;
-
-        Ok(response)
+        // no bollean response migration todo
+        Ok(true)
     }
 
     /// Get embeddings and their associated data from the collection. If no ids or filter is provided returns all embeddings up to limit starting at offset.
